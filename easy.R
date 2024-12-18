@@ -38,6 +38,23 @@ data_sorted <- list(
 
 ################################################################
 
+# compute the factorial of an integer without using the built-in function
+
+factorial_fun <- function(n){
+  x <- c(1:n) %>% sort(, decreasing = T)
+  y <- n
+  for (i in 2:n){
+    z <- y * x[i]
+    y <- z
+  }
+  return(y)
+}
+
+n <- 5
+print(factorial_fun(n))
+
+################################################################
+
 # Given an array of integers nums and an integer target, 
 # return the INDICES of the two numbers such that they add up to target
 
